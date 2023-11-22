@@ -1,0 +1,217 @@
+.page{
+  display: flex;
+  justify-content: flex-end;
+}
+.sidebar{
+  width: 11%;
+  padding: 2.5vh 2%;
+  height: 95vh;
+  background: var(--theme);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 1.5rem;
+  transition: 0.3s ease;
+}
+.sidebar sup{
+  background: var(--theme);
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  left: 15%;
+  cursor: pointer;
+  top: 0;
+  transition: 0.3s ease;
+}
+.sidebar sup, .sidebar sup i{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar::-webkit-scrollbar{
+  width: 4px;
+  background: black;
+  border-radius: 10px;
+}
+.sidebar::-webkit-scrollbar-thumb{
+  background: wheat;
+  border-radius: 10px;
+}
+.sidebar header{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid wheat;
+  width: 100%;
+  align-items: center;
+  padding: 0.5rem 0;
+  text-align: center;
+  color: white;
+}
+.sidebar header strong{
+  font-size: 1.35rem;
+}
+.sidebar header i{
+  font-size: 2rem;
+}
+
+.sidebar nav, .sidebar nav article, .sidebar nav article p{
+  display: flex;
+  flex-direction: column;
+}
+.sidebar nav{
+  gap: 1.5rem;
+}
+
+.sidebar nav article{
+  gap: 0.5rem;
+}
+.sidebar nav h5{
+  color: white;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+}
+.sidebar nav a{
+  color: darkgray;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.sidebar nav p{
+  gap: 0.3rem;
+}
+.sidebar nav p i{
+  font-size: 1.2rem;
+}
+
+.sidebar.change{
+  width: 1%;
+}
+.sidebar.change sup{
+  left: 5%;
+}
+.sidebar.change nav, .sidebar.change nav article, .sidebar.change nav article p{
+  align-items: center;
+}
+.sidebar.change header strong, .sidebar.change nav h5, .sidebar.change nav a small{
+  display: none;
+}
+
+.flipBox i{
+  rotate: 180deg;
+}
+
+.screen{
+  width: 80%;
+  min-height: 98vh;
+  padding: 1vh 2.5%;
+  transition: 0.3s ease;
+  background: #eef1f8;
+}
+
+.userNav{
+  padding: 3vh 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.userNav p{
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 2px 15px;
+  background: white;
+  border-radius: 40px;
+}
+.userNav img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.screen.change{
+  width: 90%;
+}
+
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; 
+}
+
+.titleBox{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.titleBox strong{
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--title);
+}
+.titleBox form{
+  display: flex;
+  align-items: center;
+}
+.titleBox form legend{
+  background: var(--theme);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.filterBox{
+  display: flex;
+  justify-content: space-between;
+}
+.filterBox div{
+  flex: 0.5;
+}
+
+.filterBox div, .filterBox select, .filterBox legend{
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 8px 15px;
+  border-radius: 40px;
+  border: 1px solid var(--theme);
+  background: white;
+}
+.filterBox legend{
+  cursor: pointer;
+}
+
+@media all and (max-width:950px){
+  .sidebar{
+    left: -235px;
+  }
+  .sidebar, .sidebar.change{
+    width: 200px;
+    padding: 2.5vh 15px;
+  }
+  .sidebar sup{
+    left: 0;
+  }
+  .sidebar.change{
+    left: 0;
+  }
+  .sidebar.change sup{
+    left: 230px;
+  }
+  .sidebar.change nav, .sidebar.change nav article, .sidebar.change nav article p{
+    align-items: revert;
+  }
+  .sidebar.change header strong, .sidebar.change nav h5, .sidebar.change nav a small{
+    display: flex;
+  }
+
+  .screen, .screen.change{
+    width: 95%;
+  }
+}
