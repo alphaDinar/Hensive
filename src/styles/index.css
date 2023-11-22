@@ -13,6 +13,16 @@
   --title : #494d4c;
 }
 
+body::-webkit-scrollbar{
+  background: black;
+  width: 7px;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb{
+  background: wheat;
+  border-radius: 10px;
+}
+
 a{
   text-decoration: none;
 }

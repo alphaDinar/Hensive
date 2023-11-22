@@ -141,13 +141,14 @@
 .wrapper{
   display: flex;
   flex-direction: column;
-  gap: 2rem; 
+  gap: 1.5rem; 
 }
 
 .titleBox{
   display: flex;
   justify-content: space-between;
   align-content: center;
+  flex-wrap: wrap;
 }
 .titleBox strong{
   font-size: 2.4rem;
@@ -156,22 +157,82 @@
 }
 .titleBox form{
   display: flex;
+  gap: 1rem;
   align-items: center;
 }
-.titleBox form legend{
+.titleBox form legend, .titleBox form select{
   background: var(--theme);
   color: white;
   padding: 10px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 5px;
 }
+
+.wardTypeBox{
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+.wardTypeBox::-webkit-scrollbar{
+  display: none;
+}
+.wardTypeBox legend{
+  padding: 10px;
+  flex: 1;
+  min-width: max-content;
+  border: 1px solid darkgray;
+  cursor: pointer;
+  display: flex;
+  background: white;
+  justify-content: center;
+}
+
+.bedSpaceBox{
+  background: var(--theme);
+  width: 95%;
+  padding: 1vh 2.5%;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.bedSpaceBox .left{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.bedSpaceBox .left article{
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.bedSpaceBox .left article strong{
+  font-size: 2.5rem;
+}
+.bedSpaceBox .left article p{
+  display: flex;
+  flex-direction: column;
+}
+.bedSpaceBox .left article p span{
+  font-size: 0.8rem;
+}
+.bedSpaceBox .right button{
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
 
 .filterBox{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 .filterBox div{
-  flex: 0.5;
+  flex: 1;
 }
 
 .filterBox div, .filterBox select, .filterBox legend{
@@ -213,5 +274,27 @@
 
   .screen, .screen.change{
     width: 95%;
+  }
+
+  .bedSpaceBox{
+    gap: 0.5rem;
+    justify-content: space-around;
+  }
+  .bedSpaceBox .left{
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .filterBox{
+    gap: 0.5rem;
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width:500px){
+  .userNav{
+    justify-content: center;
+  }
+  .titleBox{
+    justify-content: space-around;
   }
 }

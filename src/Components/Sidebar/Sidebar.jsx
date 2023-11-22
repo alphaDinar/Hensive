@@ -27,17 +27,17 @@ const Sidebar = () => {
         <article>
           <h5>RECORDS OFFICE</h5>
           <p>
-            <Link>{icon('group')} <small>Patients</small></Link>
+            <Link to={'/'}>{icon('group')} <small>Patients</small></Link>
           </p>
         </article>
 
         <article>
           <h5>NURSES</h5>
           <p>
-            <Link className="flipBox">{icon('outpatient_med')} <small>In Patients</small></Link>
-            <Link>{icon('outpatient_med')} <small>Out Patients</small></Link>
-            <Link>{icon('vital_signs')} <small>ER</small></Link>
-            <Link>{icon('home_health')} <small>Poly</small></Link>
+            <Link to={'/inPatients'} className="flipBox">{icon('outpatient_med')} <small>In Patients</small></Link>
+            <Link to={'/outPatients'}>{icon('outpatient_med')} <small>Out Patients</small></Link>
+            <Link to={'/ER'}>{icon('vital_signs')} <small>ER</small></Link>
+            <Link to={'/poly'}>{icon('home_health')} <small>Poly</small></Link>
           </p>
         </article>
 

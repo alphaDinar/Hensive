@@ -8,6 +8,7 @@
   gap: 0.5rem;
   display: grid;
   width: 100%;
+  align-items: center;
   padding: 10px 0px;
 }
 
@@ -18,8 +19,12 @@
 }
 
 .patientBox .headerStyle1{
-  grid-template-columns: 100px 1fr 0.5fr 0.5fr 1fr repeat(3,0.5fr) 1fr;
+  grid-template-columns: 100px 1fr 0.5fr 0.5fr 1fr repeat(2,0.5fr) 0.5fr 1fr;
 }
+.patientBox .headerStyle2{
+  grid-template-columns: 100px 1fr 0.5fr 0.3fr 0.5fr 1fr 1fr;
+}
+
 .patientBox header > *:nth-child(1), .patientBox li > *:nth-child(1){
   margin: auto;
 }
@@ -27,6 +32,9 @@
 .patientBox li{
   color: var(--title);
   background: white;
+}
+.patientBox li span{
+  font-size: 0.9rem;
 }
 .patientBox li img{
   width: 40px;
@@ -38,4 +46,76 @@
   display: flex;
   gap: 0.7rem;
   align-items: center;
+}
+.patientBox li article{
+  display: flex;
+  flex-direction: column;
+}
+
+.patientBoxNav{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  /* border: 2px solid dodgerblue; */
+}
+.patientBoxNav i{
+  font-weight: 600;
+}
+.patientBoxNav p{
+  display: flex;
+  gap: 0.5rem;
+}
+.patientBoxNav p small{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: salmon;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.patientBoxNav legend{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media all and (max-width:950px){
+  .patientBox{
+    gap: 0.7rem;
+  }
+  .patientBox .headerStyle1{
+    gap: 0.3rem;
+    grid-template-columns: repeat(5,1fr);
+  }
+  .patientBox .headerStyle2{
+    gap: 0.3rem;
+    grid-template-columns: repeat(4,1fr);
+  }
+  .patientBox .headerStyle1 >*, .patientBox .headerStyle2 >*{
+    margin: auto;
+    text-align: center;
+    border-bottom: 1px solid darkgray;
+  }
+}
+
+@media all and (max-width:750px){
+  .patientBox .headerStyle1, .patientBox .headerStyle2{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media all and (max-width:500px){
+  .patientBox .headerStyle1, .patientBox .headerStyle2{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media all and (max-width:400px){
+  .patientBox .headerStyle1, .patientBox .headerStyle2{
+    grid-template-columns: 1fr;
+  }
 }

@@ -14,6 +14,19 @@ const Patients = () => {
     'Booked By'
   ];
 
+  const patient = {
+    pid: '001',
+    img: 'https://res.cloudinary.com/dvnemzw0z/image/upload/v1700674233/blog-header-3_dab7lb.webp',
+    name: 'Osei Andrews',
+    coverage: 'Private',
+    toSee: 'Doctor',
+    specialty: 'Emergency Consultation (Adult)',
+    room: 'Emergency Room',
+    clinic: 'Emergency Clinic',
+    since: '03-05-23 10:45 AM',
+    bookedBy: 'Dr. Omar Rodriguez'
+  }
+
   return (
     <section className="wrapper">
       <header className="titleBox">
@@ -45,7 +58,7 @@ const Patients = () => {
         </legend>
       </section>
 
-      <PatientBox props={{patientBoxHeaders, headerType : 1}} />
+      <PatientBox props={{dataType : 'patient', headerType : 1, patientBoxHeaders, patient}} />
 
     </section>
   );

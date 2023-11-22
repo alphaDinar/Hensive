@@ -1,8 +1,13 @@
+import { Route, Routes } from 'react-router-dom';
 import Patients from './Admin/Patients/Patients';
 import Sidebar from './Components/Sidebar/Sidebar'
 import { icon, iconFont } from './External/design'
 import { useSidebarToggled } from './main'
 import './styles/app.css'
+import OutPatients from './Admin/Nurses/OutPatients';
+import Poly from './Admin/Nurses/Poly';
+import InPatients from './Admin/Nurses/InPatients';
+import ER from './Admin/Nurses/ER';
 
 function App() {
   const {sidebarToggled} = useSidebarToggled();
@@ -21,7 +26,15 @@ function App() {
             <span>Andrews Osei</span>
           </p>
         </article>
-        <Patients/>
+
+        <Routes>
+          <Route path='/' element={<Patients/>} />
+          <Route path='/inPatients' element={<InPatients/>} />
+          <Route path='/outPatients' element={<OutPatients/>} />
+          <Route path='/ER' element={<ER/>} />
+          <Route path='/poly' element={<Poly/>} />
+        </Routes>
+        
       </main>
     </section>
   )
