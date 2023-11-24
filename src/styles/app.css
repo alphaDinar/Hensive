@@ -147,7 +147,7 @@
 .titleBox{
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 .titleBox strong{
@@ -165,6 +165,9 @@
   color: white;
   padding: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   border-radius: 5px;
 }
 
@@ -186,6 +189,53 @@
   background: white;
   justify-content: center;
 }
+
+.topNavBox{
+  display: flex;
+  gap: 5vw;
+  overflow: auto;
+}
+.topNavBox::-webkit-scrollbar{
+  display: none;
+}
+.topNavBox article{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: white;
+  padding: 5px 15px;
+}
+.topNavBox article:nth-child(1){
+  border-bottom: 4px solid salmon;
+}
+.topNavBox article:nth-child(2){
+  border-bottom: 4px solid orange;
+}
+.topNavBox article:nth-child(3){
+  border-bottom: 4px solid skyblue;
+}
+
+.topNavBox article p{
+  display: flex;
+  flex-direction: column;
+}
+.topNavBox article i{
+  background: black;
+  color: white;
+  padding: 3px;
+  border-radius: 50%;
+}
+.topNavBox article:nth-child(1) i{
+  background: salmon;
+}
+.topNavBox article:nth-child(2) i{
+  background: orange;
+}
+.topNavBox article:nth-child(3) i{
+  background: skyblue;
+}
+
+
 
 .bedSpaceBox{
   background: var(--theme);

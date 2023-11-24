@@ -24,6 +24,13 @@
 .patientBox .headerStyle2{
   grid-template-columns: 100px 1fr 0.5fr 0.3fr 0.5fr 1fr 1fr;
 }
+.patientBox .headerStyle3{
+  grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr;
+}
+.patientBox header>*,.patientBox .headerStyle1>*, .patientBox .headerStyle2>* ,.patientBox .headerStyle3>*{
+  margin: auto;
+  text-align: center;
+}
 
 .patientBox header > *:nth-child(1), .patientBox li > *:nth-child(1){
   margin: auto;
@@ -91,31 +98,30 @@
     gap: 0.3rem;
     grid-template-columns: repeat(5,1fr);
   }
-  .patientBox .headerStyle2{
+  .patientBox .headerStyle2, .patientBox .headerStyle3{
     gap: 0.3rem;
     grid-template-columns: repeat(4,1fr);
   }
   .patientBox .headerStyle1 >*, .patientBox .headerStyle2 >*{
     margin: auto;
     text-align: center;
-    border-bottom: 1px solid darkgray;
   }
 }
 
 @media all and (max-width:750px){
-  .patientBox .headerStyle1, .patientBox .headerStyle2{
+  .patientBox .headerStyle1, .patientBox .headerStyle2, .patientBox .headerStyle3{
     grid-template-columns: repeat(3,1fr);
   }
 }
 
 @media all and (max-width:500px){
-  .patientBox .headerStyle1, .patientBox .headerStyle2{
+  .patientBox .headerStyle1, .patientBox .headerStyle2, .patientBox .headerStyle3{
     grid-template-columns: repeat(2,1fr);
   }
 }
 
 @media all and (max-width:400px){
-  .patientBox .headerStyle1, .patientBox .headerStyle2{
+  .patientBox .headerStyle1, .patientBox .headerStyle2, .patientBox .headerStyle3{
     grid-template-columns: 1fr;
   }
 }

@@ -8,6 +8,9 @@ import OutPatients from './Admin/Nurses/OutPatients';
 import Poly from './Admin/Nurses/Poly';
 import InPatients from './Admin/Nurses/InPatients';
 import ER from './Admin/Nurses/ER';
+import Consultation from './Admin/Doctors/Consultation';
+import DoctorDashboard from './Admin/Doctors/Dashboard';
+import Test from './Test';
 
 function App() {
   const {sidebarToggled} = useSidebarToggled();
@@ -33,6 +36,13 @@ function App() {
           <Route path='/outPatients' element={<OutPatients/>} />
           <Route path='/ER' element={<ER/>} />
           <Route path='/poly' element={<Poly/>} />
+
+          <Route path='/consultation' element={<Consultation/>} />
+          <Route path='/doctorDashboard' element={<DoctorDashboard/>} />
+
+
+          <Route path='test' element={<Test/>} />
+
         </Routes>
         
       </main>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './patientBox.module.css';
 import { icon } from '../../External/design';
+import { Link } from 'react-router-dom';
 
 const PatientBox = ({ props }) => {
   const { dataType } = props;
@@ -15,6 +16,8 @@ const PatientBox = ({ props }) => {
       setHeaderStyle(styles.headerStyle1)
     } else if (headerType == 2) {
       setHeaderStyle(styles.headerStyle2)
+    }else if (headerType == 3) {
+      setHeaderStyle(styles.headerStyle3)
     }
   }, [headerType])
 
@@ -64,6 +67,38 @@ const PatientBox = ({ props }) => {
               <span>{patient.maritalStatus}</span>
               <span>{patient.dateAdmitted}</span>
               <span>{patient.bedNumber}</span>
+            </li>
+          ))
+        }
+
+        {dataType === 'consultation' &&
+          Array(5).fill().map((el) => (
+            <li className={headerStyle}>
+              <span>{patient.pid}</span>
+              <p>
+                <img src={patient.img} />
+                <span>{patient.name}</span>
+              </p>
+              <span>{patient.dob}</span>
+              <span>{patient.phoneNumber}</span>
+              <span>{patient.lastAttended}</span>
+              <Link>{icon('visibility')}</Link>
+            </li>
+          ))
+        }
+
+        {dataType === 'doctorDashboard' &&
+          Array(5).fill().map((el) => (
+            <li className={headerStyle}>
+              <span>{patient.pid}</span>
+              <p>
+                <img src={patient.img} />
+                <span>{patient.name}</span>
+              </p>
+              <span>{patient.gender}</span>
+              <span>{patient.time}</span>
+              <span>{patient.priority}</span>
+              <Link>{icon('visibility')}</Link>
             </li>
           ))
         }

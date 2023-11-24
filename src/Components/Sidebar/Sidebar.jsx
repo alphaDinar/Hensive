@@ -44,8 +44,8 @@ const Sidebar = () => {
         <article>
           <h5>DOCTORS</h5>
           <p>
-            <Link>{icon('dashboard')} <small>Dashboard</small></Link>
-            <Link>{icon('sms')} <small>Consultation</small></Link>
+            <Link to={'/doctorDashboard'}>{icon('dashboard')} <small>Dashboard</small></Link>
+            <Link to={'/consultation'}>{icon('sms')} <small>Consultation</small></Link>
             <Link>{icon('assignment')} <small>Appointment</small></Link>
           </p>
         </article>
